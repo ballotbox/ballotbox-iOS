@@ -1,5 +1,5 @@
 //
-//  MasterViewController.h
+//  BBElectionTableViewController.h
 //  BallotBoxiOS
 //
 //  Created by james grippo on 3/10/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MasterViewController : UITableViewController
-
+@interface BBElectionTableViewController : UITableViewController
 
 @end
-
