@@ -10,4 +10,6 @@
 
 @interface BBAddTableViewCell : UITableViewCell
 
+@property UIButton *addChoice;
+
 @end

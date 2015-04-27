@@ -10,4 +10,10 @@
 
 @interface BBChoice : NSObject
 
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSInteger *voteCount;
+@property (nonatomic) NSInteger *choiceID;
+
+-(void) incrementVote;
+
 @end

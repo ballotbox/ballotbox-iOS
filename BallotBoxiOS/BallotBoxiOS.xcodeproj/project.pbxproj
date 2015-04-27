@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		613B998B1AAF9CE900815AE5 /* BBElectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613B998A1AAF9CE900815AE5 /* BBElectionTableViewController.m */; };
+		613B998E1AAF9D0C00815AE5 /* BBHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613B998D1AAF9D0C00815AE5 /* BBHomeTableViewController.m */; };
+		613B99911AAF9DFA00815AE5 /* BBChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 613B99901AAF9DFA00815AE5 /* BBChoice.m */; };
+		615A05941AB27FBB003E7EE7 /* BBElection.m in Sources */ = {isa = PBXBuildFile; fileRef = 615A05931AB27FBB003E7EE7 /* BBElection.m */; };
+		615A059A1AB28D34003E7EE7 /* BBHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 615A05991AB28D34003E7EE7 /* BBHomeTableViewCell.m */; };
+		615A059D1AB29BC9003E7EE7 /* BBElectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 615A059C1AB29BC9003E7EE7 /* BBElectionTableViewCell.m */; };
+		619A887D1AEC5BB2001AC99E /* BBCreateElectionTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 619A887C1AEC5BB2001AC99E /* BBCreateElectionTableTableViewController.m */; };
+		619A88801AEC5D8B001AC99E /* BBTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 619A887F1AEC5D8B001AC99E /* BBTextFieldTableViewCell.m */; };
+		619A88831AEC5DA1001AC99E /* BBTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 619A88821AEC5DA1001AC99E /* BBTextViewTableViewCell.m */; };
+		619A88891AEC71B3001AC99E /* BBAddTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 619A88881AEC71B3001AC99E /* BBAddTableViewCell.m */; };
+		619A888B1AEDDE06001AC99E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 619A888A1AEDDE06001AC99E /* Default-568h@2x.png */; };
 		61F544921AAF666F00751824 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F544911AAF666F00751824 /* main.m */; };
 		61F544951AAF666F00751824 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F544941AAF666F00751824 /* AppDelegate.m */; };
-		61F544981AAF666F00751824 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F544971AAF666F00751824 /* MasterViewController.m */; };
-		61F5449B1AAF666F00751824 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F5449A1AAF666F00751824 /* DetailViewController.m */; };
 		61F5449E1AAF666F00751824 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F5449C1AAF666F00751824 /* Main.storyboard */; };
 		61F544A01AAF666F00751824 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61F5449F1AAF666F00751824 /* Images.xcassets */; };
-		61F544A31AAF666F00751824 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61F544A11AAF666F00751824 /* LaunchScreen.xib */; };
 		61F544AF1AAF666F00751824 /* BallotBoxiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F544AE1AAF666F00751824 /* BallotBoxiOSTests.m */; };
+		74A0780161B083C043F31E1C /* libPods-BallotBoxiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB7E89A81DCE69944DF6346 /* libPods-BallotBoxiOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,21 +37,40 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		613B99891AAF9CE900815AE5 /* BBElectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBElectionTableViewController.h; sourceTree = "<group>"; };
+		613B998A1AAF9CE900815AE5 /* BBElectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBElectionTableViewController.m; sourceTree = "<group>"; };
+		613B998C1AAF9D0C00815AE5 /* BBHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBHomeTableViewController.h; sourceTree = "<group>"; };
+		613B998D1AAF9D0C00815AE5 /* BBHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBHomeTableViewController.m; sourceTree = "<group>"; };
+		613B998F1AAF9DFA00815AE5 /* BBChoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChoice.h; sourceTree = "<group>"; };
+		613B99901AAF9DFA00815AE5 /* BBChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChoice.m; sourceTree = "<group>"; };
+		615A05921AB27FBB003E7EE7 /* BBElection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBElection.h; sourceTree = "<group>"; };
+		615A05931AB27FBB003E7EE7 /* BBElection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBElection.m; sourceTree = "<group>"; };
+		615A05981AB28D34003E7EE7 /* BBHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBHomeTableViewCell.h; sourceTree = "<group>"; };
+		615A05991AB28D34003E7EE7 /* BBHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBHomeTableViewCell.m; sourceTree = "<group>"; };
+		615A059B1AB29BC9003E7EE7 /* BBElectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBElectionTableViewCell.h; sourceTree = "<group>"; };
+		615A059C1AB29BC9003E7EE7 /* BBElectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBElectionTableViewCell.m; sourceTree = "<group>"; };
+		619A887B1AEC5BB2001AC99E /* BBCreateElectionTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCreateElectionTableTableViewController.h; sourceTree = "<group>"; };
+		619A887C1AEC5BB2001AC99E /* BBCreateElectionTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCreateElectionTableTableViewController.m; sourceTree = "<group>"; };
+		619A887E1AEC5D8B001AC99E /* BBTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		619A887F1AEC5D8B001AC99E /* BBTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		619A88811AEC5DA1001AC99E /* BBTextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTextViewTableViewCell.h; sourceTree = "<group>"; };
+		619A88821AEC5DA1001AC99E /* BBTextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTextViewTableViewCell.m; sourceTree = "<group>"; };
+		619A88871AEC71B3001AC99E /* BBAddTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAddTableViewCell.h; sourceTree = "<group>"; };
+		619A88881AEC71B3001AC99E /* BBAddTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAddTableViewCell.m; sourceTree = "<group>"; };
+		619A888A1AEDDE06001AC99E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		61F5448C1AAF666F00751824 /* BallotBoxiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BallotBoxiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61F544901AAF666F00751824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61F544911AAF666F00751824 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		61F544931AAF666F00751824 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		61F544941AAF666F00751824 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		61F544961AAF666F00751824 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		61F544971AAF666F00751824 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		61F544991AAF666F00751824 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		61F5449A1AAF666F00751824 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		61F5449D1AAF666F00751824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		61F5449F1AAF666F00751824 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		61F544A21AAF666F00751824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		61F544A81AAF666F00751824 /* BallotBoxiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BallotBoxiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61F544AD1AAF666F00751824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61F544AE1AAF666F00751824 /* BallotBoxiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BallotBoxiOSTests.m; sourceTree = "<group>"; };
+		8FB7E89A81DCE69944DF6346 /* libPods-BallotBoxiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BallotBoxiOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		978DF6D389D355DE8D847C44 /* Pods-BallotBoxiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BallotBoxiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BallotBoxiOS/Pods-BallotBoxiOS.release.xcconfig"; sourceTree = "<group>"; };
+		CA1706866822D543D9767F96 /* Pods-BallotBoxiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BallotBoxiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BallotBoxiOS/Pods-BallotBoxiOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A0780161B083C043F31E1C /* libPods-BallotBoxiOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,12 +92,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B4A1C9BD11BCA242205CC29 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA1706866822D543D9767F96 /* Pods-BallotBoxiOS.debug.xcconfig */,
+				978DF6D389D355DE8D847C44 /* Pods-BallotBoxiOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		619A88841AEC5EBF001AC99E /* Create Election */ = {
+			isa = PBXGroup;
+			children = (
+				619A887B1AEC5BB2001AC99E /* BBCreateElectionTableTableViewController.h */,
+				619A887C1AEC5BB2001AC99E /* BBCreateElectionTableTableViewController.m */,
+				619A887E1AEC5D8B001AC99E /* BBTextFieldTableViewCell.h */,
+				619A887F1AEC5D8B001AC99E /* BBTextFieldTableViewCell.m */,
+				619A88811AEC5DA1001AC99E /* BBTextViewTableViewCell.h */,
+				619A88821AEC5DA1001AC99E /* BBTextViewTableViewCell.m */,
+				619A88871AEC71B3001AC99E /* BBAddTableViewCell.h */,
+				619A88881AEC71B3001AC99E /* BBAddTableViewCell.m */,
+			);
+			path = "Create Election";
+			sourceTree = "<group>";
+		};
+		619A88851AEC5ED2001AC99E /* Election Table View */ = {
+			isa = PBXGroup;
+			children = (
+				613B99891AAF9CE900815AE5 /* BBElectionTableViewController.h */,
+				613B998A1AAF9CE900815AE5 /* BBElectionTableViewController.m */,
+				615A059B1AB29BC9003E7EE7 /* BBElectionTableViewCell.h */,
+				615A059C1AB29BC9003E7EE7 /* BBElectionTableViewCell.m */,
+			);
+			path = "Election Table View";
+			sourceTree = "<group>";
+		};
+		619A88861AEC5EF2001AC99E /* HomeTableView */ = {
+			isa = PBXGroup;
+			children = (
+				615A05981AB28D34003E7EE7 /* BBHomeTableViewCell.h */,
+				615A05991AB28D34003E7EE7 /* BBHomeTableViewCell.m */,
+				613B998C1AAF9D0C00815AE5 /* BBHomeTableViewController.h */,
+				613B998D1AAF9D0C00815AE5 /* BBHomeTableViewController.m */,
+			);
+			path = HomeTableView;
+			sourceTree = "<group>";
+		};
+		619A888C1AEDDE43001AC99E /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				613B998F1AAF9DFA00815AE5 /* BBChoice.h */,
+				613B99901AAF9DFA00815AE5 /* BBChoice.m */,
+				615A05921AB27FBB003E7EE7 /* BBElection.h */,
+				615A05931AB27FBB003E7EE7 /* BBElection.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
 		61F544831AAF666F00751824 = {
 			isa = PBXGroup;
 			children = (
+				619A888A1AEDDE06001AC99E /* Default-568h@2x.png */,
 				61F5448E1AAF666F00751824 /* BallotBoxiOS */,
 				61F544AB1AAF666F00751824 /* BallotBoxiOSTests */,
 				61F5448D1AAF666F00751824 /* Products */,
+				1B4A1C9BD11BCA242205CC29 /* Pods */,
+				B611A265C8AFFBF29252EEF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,15 +173,14 @@
 		61F5448E1AAF666F00751824 /* BallotBoxiOS */ = {
 			isa = PBXGroup;
 			children = (
+				619A888C1AEDDE43001AC99E /* Objects */,
+				619A88861AEC5EF2001AC99E /* HomeTableView */,
+				619A88851AEC5ED2001AC99E /* Election Table View */,
+				619A88841AEC5EBF001AC99E /* Create Election */,
 				61F544931AAF666F00751824 /* AppDelegate.h */,
 				61F544941AAF666F00751824 /* AppDelegate.m */,
-				61F544961AAF666F00751824 /* MasterViewController.h */,
-				61F544971AAF666F00751824 /* MasterViewController.m */,
-				61F544991AAF666F00751824 /* DetailViewController.h */,
-				61F5449A1AAF666F00751824 /* DetailViewController.m */,
 				61F5449C1AAF666F00751824 /* Main.storyboard */,
 				61F5449F1AAF666F00751824 /* Images.xcassets */,
-				61F544A11AAF666F00751824 /* LaunchScreen.xib */,
 				61F5448F1AAF666F00751824 /* Supporting Files */,
 			);
 			path = BallotBoxiOS;
@@ -104,7 +192,7 @@
 				61F544901AAF666F00751824 /* Info.plist */,
 				61F544911AAF666F00751824 /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		61F544AB1AAF666F00751824 /* BallotBoxiOSTests */ = {
@@ -121,7 +209,15 @@
 			children = (
 				61F544AD1AAF666F00751824 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B611A265C8AFFBF29252EEF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FB7E89A81DCE69944DF6346 /* libPods-BallotBoxiOS.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 61F544B21AAF666F00751824 /* Build configuration list for PBXNativeTarget "BallotBoxiOS" */;
 			buildPhases = (
+				AFBA37C12AE1F51E23599853 /* Check Pods Manifest.lock */,
 				61F544881AAF666F00751824 /* Sources */,
 				61F544891AAF666F00751824 /* Frameworks */,
 				61F5448A1AAF666F00751824 /* Resources */,
+				E3F2FE64CE3F308237523F89 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,8 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				61F5449E1AAF666F00751824 /* Main.storyboard in Resources */,
-				61F544A31AAF666F00751824 /* LaunchScreen.xib in Resources */,
 				61F544A01AAF666F00751824 /* Images.xcassets in Resources */,
+				619A888B1AEDDE06001AC99E /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,15 +317,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AFBA37C12AE1F51E23599853 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E3F2FE64CE3F308237523F89 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BallotBoxiOS/Pods-BallotBoxiOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		61F544881AAF666F00751824 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				615A059A1AB28D34003E7EE7 /* BBHomeTableViewCell.m in Sources */,
+				619A88801AEC5D8B001AC99E /* BBTextFieldTableViewCell.m in Sources */,
+				613B998B1AAF9CE900815AE5 /* BBElectionTableViewController.m in Sources */,
+				615A05941AB27FBB003E7EE7 /* BBElection.m in Sources */,
 				61F544951AAF666F00751824 /* AppDelegate.m in Sources */,
-				61F544981AAF666F00751824 /* MasterViewController.m in Sources */,
+				613B99911AAF9DFA00815AE5 /* BBChoice.m in Sources */,
+				613B998E1AAF9D0C00815AE5 /* BBHomeTableViewController.m in Sources */,
+				619A88831AEC5DA1001AC99E /* BBTextViewTableViewCell.m in Sources */,
+				615A059D1AB29BC9003E7EE7 /* BBElectionTableViewCell.m in Sources */,
+				619A887D1AEC5BB2001AC99E /* BBCreateElectionTableTableViewController.m in Sources */,
 				61F544921AAF666F00751824 /* main.m in Sources */,
-				61F5449B1AAF666F00751824 /* DetailViewController.m in Sources */,
+				619A88891AEC71B3001AC99E /* BBAddTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,14 +395,7 @@
 				61F5449D1AAF666F00751824 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		61F544A11AAF666F00751824 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				61F544A21AAF666F00751824 /* Base */,
-			);
-			name = LaunchScreen.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -347,9 +479,10 @@
 		};
 		61F544B31AAF666F00751824 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA1706866822D543D9767F96 /* Pods-BallotBoxiOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = BallotBoxiOS/Info.plist;
+				INFOPLIST_FILE = "BallotBoxiOS/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -357,9 +490,10 @@
 		};
 		61F544B41AAF666F00751824 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 978DF6D389D355DE8D847C44 /* Pods-BallotBoxiOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = BallotBoxiOS/Info.plist;
+				INFOPLIST_FILE = "BallotBoxiOS/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -377,7 +511,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = BallotBoxiOSTests/Info.plist;
+				INFOPLIST_FILE = "BallotBoxiOSTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BallotBoxiOS.app/BallotBoxiOS";
@@ -392,7 +526,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = BallotBoxiOSTests/Info.plist;
+				INFOPLIST_FILE = "BallotBoxiOSTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BallotBoxiOS.app/BallotBoxiOS";
@@ -418,6 +552,7 @@
 				61F544B41AAF666F00751824 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		61F544B51AAF666F00751824 /* Build configuration list for PBXNativeTarget "BallotBoxiOSTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +561,7 @@
 				61F544B71AAF666F00751824 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

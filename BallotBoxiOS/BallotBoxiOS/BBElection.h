@@ -10,4 +10,10 @@
 
 @interface BBElection : NSObject
 
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSMutableArray *choices;
+@property (nonatomic) NSInteger *electionID;
+
+
+
 @end

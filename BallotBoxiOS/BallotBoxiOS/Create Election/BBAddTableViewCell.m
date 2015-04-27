@@ -10,6 +10,8 @@
 
 @implementation BBAddTableViewCell
 
+@synthesize addChoice;
+
 - (void)awakeFromNib {
     // Initialization code
 }

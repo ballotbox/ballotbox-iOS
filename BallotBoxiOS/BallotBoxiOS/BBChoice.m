@@ -10,4 +10,20 @@
 
 @implementation BBChoice
 
+@synthesize name, voteCount, choiceID;
+
+-(instancetype)init
+{
+    self = [super init];
+    name = [[NSString alloc] init];
+    choiceID =0;
+    voteCount =0;
+    return self;
+}
+
+-(void) incrementVote
+{
+    ++voteCount;
+}
+
 @end
