@@ -11,6 +11,8 @@
 #import "BBChoice.h"
 #import "BBElectionTableViewController.h"
 #import "BBElection.h"
+#import "BBLogInViewController.h"
+#import "AFHTTPSessionManager.h"
 
 @interface AppDelegate ()
 
@@ -23,10 +25,17 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[BBHomeTableViewController alloc] init]];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[BBLogInViewController alloc] init]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void) completeLogIn
+{
+    UINavigationController* nav;
+    nav = (UINavigationController*) self.window.rootViewController;
+    [nav setViewControllers:@[[[BBHomeTableViewController alloc] init]]];
 }
 
 

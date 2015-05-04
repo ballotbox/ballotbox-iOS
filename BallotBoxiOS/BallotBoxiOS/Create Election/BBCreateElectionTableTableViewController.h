@@ -12,6 +12,6 @@
 
 @interface BBCreateElectionTableTableViewController : UITableViewController
 
--(void) createElection:(BBElection *) e;
+@property BBElection* currentElection;
 
 @end

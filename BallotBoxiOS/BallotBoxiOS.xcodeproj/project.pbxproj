@@ -13,6 +13,8 @@
 		615A05941AB27FBB003E7EE7 /* BBElection.m in Sources */ = {isa = PBXBuildFile; fileRef = 615A05931AB27FBB003E7EE7 /* BBElection.m */; };
 		615A059A1AB28D34003E7EE7 /* BBHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 615A05991AB28D34003E7EE7 /* BBHomeTableViewCell.m */; };
 		615A059D1AB29BC9003E7EE7 /* BBElectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 615A059C1AB29BC9003E7EE7 /* BBElectionTableViewCell.m */; };
+		619859F51AF71E5200DC0580 /* BBLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 619859F41AF71E5200DC0580 /* BBLogInViewController.m */; };
+		619859F91AF729DB00DC0580 /* BBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 619859F81AF729DB00DC0580 /* BBManager.m */; };
 		619A887D1AEC5BB2001AC99E /* BBCreateElectionTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 619A887C1AEC5BB2001AC99E /* BBCreateElectionTableTableViewController.m */; };
 		619A88801AEC5D8B001AC99E /* BBTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 619A887F1AEC5D8B001AC99E /* BBTextFieldTableViewCell.m */; };
 		619A88831AEC5DA1001AC99E /* BBTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 619A88821AEC5DA1001AC99E /* BBTextViewTableViewCell.m */; };
@@ -49,6 +51,10 @@
 		615A05991AB28D34003E7EE7 /* BBHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBHomeTableViewCell.m; sourceTree = "<group>"; };
 		615A059B1AB29BC9003E7EE7 /* BBElectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBElectionTableViewCell.h; sourceTree = "<group>"; };
 		615A059C1AB29BC9003E7EE7 /* BBElectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBElectionTableViewCell.m; sourceTree = "<group>"; };
+		619859F31AF71E5200DC0580 /* BBLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBLogInViewController.h; sourceTree = "<group>"; };
+		619859F41AF71E5200DC0580 /* BBLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBLogInViewController.m; sourceTree = "<group>"; };
+		619859F71AF729DB00DC0580 /* BBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBManager.h; sourceTree = "<group>"; };
+		619859F81AF729DB00DC0580 /* BBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBManager.m; sourceTree = "<group>"; };
 		619A887B1AEC5BB2001AC99E /* BBCreateElectionTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBCreateElectionTableTableViewController.h; sourceTree = "<group>"; };
 		619A887C1AEC5BB2001AC99E /* BBCreateElectionTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBCreateElectionTableTableViewController.m; sourceTree = "<group>"; };
 		619A887E1AEC5D8B001AC99E /* BBTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTextFieldTableViewCell.h; sourceTree = "<group>"; };
@@ -99,6 +105,24 @@
 				978DF6D389D355DE8D847C44 /* Pods-BallotBoxiOS.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		619859F21AF71E1600DC0580 /* BBLogInView */ = {
+			isa = PBXGroup;
+			children = (
+				619859F31AF71E5200DC0580 /* BBLogInViewController.h */,
+				619859F41AF71E5200DC0580 /* BBLogInViewController.m */,
+			);
+			name = BBLogInView;
+			sourceTree = "<group>";
+		};
+		619859F61AF729A800DC0580 /* BBManager */ = {
+			isa = PBXGroup;
+			children = (
+				619859F71AF729DB00DC0580 /* BBManager.h */,
+				619859F81AF729DB00DC0580 /* BBManager.m */,
+			);
+			name = BBManager;
 			sourceTree = "<group>";
 		};
 		619A88841AEC5EBF001AC99E /* Create Election */ = {
@@ -173,6 +197,8 @@
 		61F5448E1AAF666F00751824 /* BallotBoxiOS */ = {
 			isa = PBXGroup;
 			children = (
+				619859F61AF729A800DC0580 /* BBManager */,
+				619859F21AF71E1600DC0580 /* BBLogInView */,
 				619A888C1AEDDE43001AC99E /* Objects */,
 				619A88861AEC5EF2001AC99E /* HomeTableView */,
 				619A88851AEC5ED2001AC99E /* Election Table View */,
@@ -356,6 +382,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				615A059A1AB28D34003E7EE7 /* BBHomeTableViewCell.m in Sources */,
+				619859F91AF729DB00DC0580 /* BBManager.m in Sources */,
+				619859F51AF71E5200DC0580 /* BBLogInViewController.m in Sources */,
 				619A88801AEC5D8B001AC99E /* BBTextFieldTableViewCell.m in Sources */,
 				613B998B1AAF9CE900815AE5 /* BBElectionTableViewController.m in Sources */,
 				615A05941AB27FBB003E7EE7 /* BBElection.m in Sources */,

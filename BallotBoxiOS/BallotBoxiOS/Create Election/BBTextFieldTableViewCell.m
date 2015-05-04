@@ -7,6 +7,7 @@
 //
 
 #import "BBTextFieldTableViewCell.h"
+#import "Masonry.h"
 
 @implementation BBTextFieldTableViewCell
 
@@ -18,11 +19,19 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier] )
-    {
-        inputTextField = [[UITextField alloc] init];
-        
-    }
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    inputTextField = [[UITextField alloc] init];
+    [self.contentView addSubview:inputTextField];
+    
+    UIEdgeInsets padding = UIEdgeInsetsMake(0, 10, 0, 0);
+    
+    [inputTextField mas_makeConstraints:^(MASConstraintMaker *make)
+     {
+         make.top.equalTo(self.contentView.mas_top).with.offset(padding.top); //with is an optional semantic filler
+         make.left.equalTo(self.contentView.mas_left).with.offset(padding.left);
+         make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-padding.bottom);
+         make.right.equalTo(self.contentView.mas_right).with.offset(-padding.right);
+     }];
     return self;
 }
 

@@ -21,9 +21,13 @@
 
 @implementation BBHomeTableViewController
 
-- (IBAction)createElection:(id)sender
+- (void)createElection:(id)sender
 {
-    [self performSegueWithIdentifier:@"CreateElection" sender:self];
+    BBCreateElectionTableTableViewController* dst = [[BBCreateElectionTableTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    BBElection* e = [[BBElection alloc]init];
+    dst.currentElection = e;
+    [self.navigationController showViewController:dst sender:self];
+    
 }
 
 - (instancetype)init
@@ -74,13 +78,9 @@
     [Elections addObject:elec];
     
     
-    
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIBarButtonItem* createElectionBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createElection:)];
+    self.navigationItem.rightBarButtonItem = createElectionBarButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -152,30 +152,30 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    // Passing the chosen election to display it's choices.
-    if ([[segue identifier] isEqualToString:@"ElectionSegue"])
-    {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        BBElectionTableViewController *dst = [segue destinationViewController];
-        BBElection* e = Elections[indexPath.row];
-        [dst setCurrentElection:e];
-
-    }
-    
-    // Pass a new BBElection object into create election.
-    if ([[segue identifier] isEqualToString:@"CreateElection"])
-    {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSInteger newRow = indexPath.row;
-        NSIndexPath *newElection = [NSIndexPath indexPathForRow:newRow inSection:indexPath.section];
-        BBCreateElectionTableTableViewController *dst = [segue destinationViewController];
-        BBElection* e = Elections[newElection.row];
-        [dst createElection:e];
-    }
-    
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    
+//    // Passing the chosen election to display it's choices.
+//    if ([[segue identifier] isEqualToString:@"ElectionSegue"])
+//    {
+//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//        BBElectionTableViewController *dst = [segue destinationViewController];
+//        BBElection* e = Elections[indexPath.row];
+//        [dst setCurrentElection:e];
+//
+//    }
+//    
+//    // Pass a new BBElection object into create election.
+//    if ([[segue identifier] isEqualToString:@"CreateElection"])
+//    {
+//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//        NSInteger newRow = indexPath.row;
+//        NSIndexPath *newElection = [NSIndexPath indexPathForRow:newRow inSection:indexPath.section];
+//        BBCreateElectionTableTableViewController *dst = [segue destinationViewController];
+//        BBElection* e = Elections[newElection.row];
+//        //[dst createElection:e];
+//    }
+//    
+//}
 
 
 @end

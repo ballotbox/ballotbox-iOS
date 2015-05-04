@@ -10,7 +10,7 @@
 
 @implementation BBElection
 
-@synthesize name, choices, electionID;
+@synthesize name, choices, electionID, description;
 
 -(instancetype)init
 {

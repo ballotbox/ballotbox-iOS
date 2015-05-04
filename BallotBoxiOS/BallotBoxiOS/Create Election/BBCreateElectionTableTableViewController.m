@@ -14,16 +14,12 @@
 @interface BBCreateElectionTableTableViewController ()
 {
     NSInteger numberOfChoices;
-    BBElection *currentElection;
 }
 @end
 
 @implementation BBCreateElectionTableTableViewController
 
--(void) createElection:(BBElection *)e
-{
-    currentElection = e;
-}
+@synthesize currentElection;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,7 +29,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,23 +37,73 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)addChoiceToTableView: (id)sender
+{
+    numberOfChoices++;
+    NSIndexPath* ip = [NSIndexPath indexPathForRow:(numberOfChoices-2) inSection:2];
+
+    [self.tableView insertRowsAtIndexPaths: @[ip] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void) finishCreatingElection
+{
+    NSMutableArray* newElection = [[NSMutableArray alloc] init];
+    NSMutableArray* Choices = [[NSMutableArray alloc] init];
+    
+    NSIndexPath* ip = [NSIndexPath indexPathForRow:0 inSection:0];
+    [newElection addObject:ip];
+    
+    ip = [NSIndexPath indexPathForRow:0 inSection:1];
+    [newElection addObject:ip];
+    
+    for(int i=0; i<numberOfChoices-1; ++i)
+    {
+        ip = [NSIndexPath indexPathForRow:i inSection:2];
+        [newElection addObject:ip];
+    }
+    
+    BBElection* e = [[BBElection alloc] init];
+    
+    BBTextFieldTableViewCell * temp1 = (BBTextFieldTableViewCell*) [self.tableView cellForRowAtIndexPath:newElection[0]];
+    e.name = temp1.inputTextField.text;
+    BBTextViewTableViewCell *temp2 = (BBTextViewTableViewCell*) [self.tableView cellForRowAtIndexPath:newElection[1]];
+    e.description = temp2.inputTextView.text;
+    for(int i =2; i<numberOfChoices+1;++i)
+    {
+        temp1 = (BBTextFieldTableViewCell*) [self.tableView cellForRowAtIndexPath:newElection[i]];
+        BBChoice *c = [[BBChoice alloc] init];
+        if(temp1.inputTextField.text.length == 0){}
+        else
+        {
+            c.name = temp1.inputTextField.text;
+            c.voteCount =0;
+            [Choices addObject:c];
+        }
+
+    }
+    e.choices = Choices;
+    currentElection = e;
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     // Return the number of sections.
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     // Return the number of rows in the section.
-    if ( section == 0 || section == 1)
+    if ( section == 2)
     {
-        return 1;
+        return numberOfChoices;
     }
     else
-        return numberOfChoices;
+        return 1;
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -86,6 +132,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell* cell;
+    self.tableView.bounces = YES;
     if (indexPath.section == 2 && indexPath.row == numberOfChoices-1)
     {
         cell = [self.tableView dequeueReusableCellWithIdentifier:@"addChoice"];
@@ -93,9 +140,13 @@
         {
             cell = [[BBAddTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"addChoice"];
         }
-        return cell;
+        BBAddTableViewCell* betterCell = (BBAddTableViewCell*) cell;
+        [[betterCell addChoice] setTitle:@"tap here to add a choice" forState:UIControlStateNormal];
+        [[betterCell addChoice] setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [[betterCell addChoice] addTarget:self action:@selector(addChoiceToTableView:) forControlEvents:UIControlEventTouchUpInside];
+        return betterCell;
     }
-    if ( indexPath.section == 1)
+    else if ( indexPath.section == 1)
     {
         cell = [self.tableView dequeueReusableCellWithIdentifier:@"textViewTableViewCell"];
         if(!cell)
@@ -103,9 +154,23 @@
             cell = [[BBTextViewTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"textViewTableViewCell"];
         }
         BBTextViewTableViewCell* betterCell = (BBTextViewTableViewCell*) cell;
-        betterCell.inputTextView.text = @"Election Description";
+        betterCell.inputTextView.text = @"Tell us about your election. 😎";
         return betterCell;
     }
+    else if ( indexPath.section == 3)
+    {
+        cell = [self.tableView dequeueReusableCellWithIdentifier:@"done"];
+        if(!cell)
+        {
+            cell = [[BBAddTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"done"];
+        }
+        BBAddTableViewCell* betterCell = (BBAddTableViewCell*) cell;
+        [[betterCell addChoice] setTitle:@"tap here finish creating your election" forState:UIControlStateNormal];
+        [[betterCell addChoice] setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [[betterCell addChoice] addTarget:self action:@selector(finishCreatingElection) forControlEvents:UIControlEventTouchUpInside];
+        return betterCell;
+    }
+    
     else
     {
         cell = [self.tableView dequeueReusableCellWithIdentifier:@"textFieldTableViewCell"];
@@ -119,19 +184,35 @@
     }
     
     
-    // Configure the cell...
-    
-    //return cell;
+    return cell;
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    if (indexPath.section == 2)
+    {
+        return YES;
+    }
+    else{
+        return NO;
+    }
 }
-*/
+
+- (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView beginUpdates];
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        BBTextFieldTableViewCell * temp = (BBTextFieldTableViewCell*) [self.tableView cellForRowAtIndexPath:indexPath];
+        temp.inputTextField.text = @"";
+        numberOfChoices--;
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationTop];
+    }
+    [tableView endUpdates];
+}
+
 
 /*
 // Override to support editing the table view.
