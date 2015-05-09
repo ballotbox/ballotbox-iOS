@@ -10,7 +10,7 @@
 
 @implementation BBElection
 
-@synthesize name, choices, electionID, description;
+@synthesize name, choices, electionID, description, publicID, creatorID;
 
 -(instancetype)init
 {
@@ -18,6 +18,8 @@
     choices = [[NSMutableArray alloc] init];
     name = [[NSString alloc] init];
     electionID = 0;
+    publicID =0;
+    creatorID =0;
     
     return self;
 }

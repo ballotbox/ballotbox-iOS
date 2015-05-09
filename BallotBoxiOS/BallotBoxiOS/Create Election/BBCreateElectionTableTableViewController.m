@@ -10,6 +10,8 @@
 #import "BBTextFieldTableViewCell.h"
 #import "BBTextViewTableViewCell.h"
 #import "BBAddTableViewCell.h"
+#import "BBSwitchTableViewCell.h"
+#import "BBManager.h"
 
 @interface BBCreateElectionTableTableViewController ()
 {
@@ -56,33 +58,51 @@
     ip = [NSIndexPath indexPathForRow:0 inSection:1];
     [newElection addObject:ip];
     
+    ip = [NSIndexPath indexPathForRow:1 inSection:0];
+    [newElection addObject:ip];
+    
     for(int i=0; i<numberOfChoices-1; ++i)
     {
         ip = [NSIndexPath indexPathForRow:i inSection:2];
         [newElection addObject:ip];
     }
     
-    BBElection* e = [[BBElection alloc] init];
+    BBTextFieldTableViewCell * ipElectionTitle = (BBTextFieldTableViewCell*) [self.tableView cellForRowAtIndexPath:newElection[0]];
+    BBTextViewTableViewCell *ipElectionBody = (BBTextViewTableViewCell*) [self.tableView cellForRowAtIndexPath:newElection[1]];
+    BBSwitchTableViewCell *ipElectionPublic= (BBSwitchTableViewCell*) [self.tableView cellForRowAtIndexPath:newElection[2]];
     
-    BBTextFieldTableViewCell * temp1 = (BBTextFieldTableViewCell*) [self.tableView cellForRowAtIndexPath:newElection[0]];
-    e.name = temp1.inputTextField.text;
-    BBTextViewTableViewCell *temp2 = (BBTextViewTableViewCell*) [self.tableView cellForRowAtIndexPath:newElection[1]];
-    e.description = temp2.inputTextView.text;
-    for(int i =2; i<numberOfChoices+1;++i)
+    for(int i =3; i<numberOfChoices+2;++i)
     {
-        temp1 = (BBTextFieldTableViewCell*) [self.tableView cellForRowAtIndexPath:newElection[i]];
-        BBChoice *c = [[BBChoice alloc] init];
-        if(temp1.inputTextField.text.length == 0){}
+        BBTextFieldTableViewCell *temp3 = (BBTextFieldTableViewCell*) [self.tableView cellForRowAtIndexPath:newElection[i]];
+        if(temp3.inputTextField.text.length == 0){}
         else
         {
-            c.name = temp1.inputTextField.text;
-            c.voteCount =0;
-            [Choices addObject:c];
+            NSDictionary* choice = [[NSDictionary alloc] init];
+            choice = @{ @"body" : temp3.inputTextField.text };
+            [Choices addObject:choice];
         }
 
     }
-    e.choices = Choices;
-    currentElection = e;
+    
+    /*
+     title = e.name = temp1.inputTextField.text;
+     body = e.description = temp2.inputTextView.text;
+    */
+    
+    NSDictionary* createElectionDictionary = @{
+                                               @"title" : ipElectionTitle.inputTextField.text,
+                                               @"body" : ipElectionBody.inputTextView.text,
+                                               @"public" : [NSNumber numberWithBool:ipElectionPublic.publicSwitch.on],
+                                               @"choices" : (NSArray*) Choices
+                                               };
+    NSDictionary* createElectionParameter = @{@"election": createElectionDictionary };
+    
+    [[BBManager sessionManager] POST:@"/api/v1/elections" parameters:createElectionParameter success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
+    
     [self.navigationController popViewControllerAnimated:YES];
     
 }
@@ -101,6 +121,10 @@
     if ( section == 2)
     {
         return numberOfChoices;
+    }
+    else if ( section == 0)
+    {
+        return 2;
     }
     else
         return 1;
@@ -144,6 +168,17 @@
         [[betterCell addChoice] setTitle:@"tap here to add a choice" forState:UIControlStateNormal];
         [[betterCell addChoice] setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [[betterCell addChoice] addTarget:self action:@selector(addChoiceToTableView:) forControlEvents:UIControlEventTouchUpInside];
+        return betterCell;
+    }
+    else if ( indexPath.section ==0 && indexPath.row == 1)
+    {
+        cell = [self.tableView dequeueReusableCellWithIdentifier:@"publicSwitch"];
+        if(!cell)
+        {
+            cell = [[BBSwitchTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"publicSwitch"];
+        }
+        BBSwitchTableViewCell* betterCell = (BBSwitchTableViewCell*) cell;
+        betterCell.textLabel.text = @"Public?";
         return betterCell;
     }
     else if ( indexPath.section == 1)

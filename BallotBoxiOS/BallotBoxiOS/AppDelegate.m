@@ -35,7 +35,7 @@
 {
     UINavigationController* nav;
     nav = (UINavigationController*) self.window.rootViewController;
-    [nav setViewControllers:@[[[BBHomeTableViewController alloc] init]]];
+    [(UINavigationController*) self.window.rootViewController setViewControllers:@[[[BBHomeTableViewController alloc] init]]];
 }
 
 

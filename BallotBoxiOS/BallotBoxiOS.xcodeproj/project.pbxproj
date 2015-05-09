@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		610FEF711AFD762600816A14 /* BBSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 610FEF701AFD762600816A14 /* BBSwitchTableViewCell.m */; };
 		613B998B1AAF9CE900815AE5 /* BBElectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613B998A1AAF9CE900815AE5 /* BBElectionTableViewController.m */; };
 		613B998E1AAF9D0C00815AE5 /* BBHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613B998D1AAF9D0C00815AE5 /* BBHomeTableViewController.m */; };
-		613B99911AAF9DFA00815AE5 /* BBChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 613B99901AAF9DFA00815AE5 /* BBChoice.m */; };
 		615A05941AB27FBB003E7EE7 /* BBElection.m in Sources */ = {isa = PBXBuildFile; fileRef = 615A05931AB27FBB003E7EE7 /* BBElection.m */; };
 		615A059A1AB28D34003E7EE7 /* BBHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 615A05991AB28D34003E7EE7 /* BBHomeTableViewCell.m */; };
 		615A059D1AB29BC9003E7EE7 /* BBElectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 615A059C1AB29BC9003E7EE7 /* BBElectionTableViewCell.m */; };
@@ -39,12 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		610FEF6F1AFD762600816A14 /* BBSwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBSwitchTableViewCell.h; sourceTree = "<group>"; };
+		610FEF701AFD762600816A14 /* BBSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBSwitchTableViewCell.m; sourceTree = "<group>"; };
 		613B99891AAF9CE900815AE5 /* BBElectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBElectionTableViewController.h; sourceTree = "<group>"; };
 		613B998A1AAF9CE900815AE5 /* BBElectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBElectionTableViewController.m; sourceTree = "<group>"; };
 		613B998C1AAF9D0C00815AE5 /* BBHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBHomeTableViewController.h; sourceTree = "<group>"; };
 		613B998D1AAF9D0C00815AE5 /* BBHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBHomeTableViewController.m; sourceTree = "<group>"; };
-		613B998F1AAF9DFA00815AE5 /* BBChoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBChoice.h; sourceTree = "<group>"; };
-		613B99901AAF9DFA00815AE5 /* BBChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBChoice.m; sourceTree = "<group>"; };
 		615A05921AB27FBB003E7EE7 /* BBElection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBElection.h; sourceTree = "<group>"; };
 		615A05931AB27FBB003E7EE7 /* BBElection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBElection.m; sourceTree = "<group>"; };
 		615A05981AB28D34003E7EE7 /* BBHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBHomeTableViewCell.h; sourceTree = "<group>"; };
@@ -136,6 +136,8 @@
 				619A88821AEC5DA1001AC99E /* BBTextViewTableViewCell.m */,
 				619A88871AEC71B3001AC99E /* BBAddTableViewCell.h */,
 				619A88881AEC71B3001AC99E /* BBAddTableViewCell.m */,
+				610FEF6F1AFD762600816A14 /* BBSwitchTableViewCell.h */,
+				610FEF701AFD762600816A14 /* BBSwitchTableViewCell.m */,
 			);
 			path = "Create Election";
 			sourceTree = "<group>";
@@ -165,8 +167,6 @@
 		619A888C1AEDDE43001AC99E /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				613B998F1AAF9DFA00815AE5 /* BBChoice.h */,
-				613B99901AAF9DFA00815AE5 /* BBChoice.m */,
 				615A05921AB27FBB003E7EE7 /* BBElection.h */,
 				615A05931AB27FBB003E7EE7 /* BBElection.m */,
 			);
@@ -382,13 +382,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				615A059A1AB28D34003E7EE7 /* BBHomeTableViewCell.m in Sources */,
+				610FEF711AFD762600816A14 /* BBSwitchTableViewCell.m in Sources */,
 				619859F91AF729DB00DC0580 /* BBManager.m in Sources */,
 				619859F51AF71E5200DC0580 /* BBLogInViewController.m in Sources */,
 				619A88801AEC5D8B001AC99E /* BBTextFieldTableViewCell.m in Sources */,
 				613B998B1AAF9CE900815AE5 /* BBElectionTableViewController.m in Sources */,
 				615A05941AB27FBB003E7EE7 /* BBElection.m in Sources */,
 				61F544951AAF666F00751824 /* AppDelegate.m in Sources */,
-				613B99911AAF9DFA00815AE5 /* BBChoice.m in Sources */,
 				613B998E1AAF9D0C00815AE5 /* BBHomeTableViewController.m in Sources */,
 				619A88831AEC5DA1001AC99E /* BBTextViewTableViewCell.m in Sources */,
 				615A059D1AB29BC9003E7EE7 /* BBElectionTableViewCell.m in Sources */,

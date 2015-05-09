@@ -10,6 +10,7 @@
 #import "BBElectionTableViewController.h"
 #import "BBHomeTableViewCell.h"
 #import "BBCreateElectionTableTableViewController.h"
+#import "BBManager.h"
 
 @interface BBHomeTableViewController ()
 {
@@ -28,54 +29,63 @@
     dst.currentElection = e;
     [self.navigationController showViewController:dst sender:self];
     
+    
 }
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
+        [[self tableView] setDelegate:self];
+        [[self tableView] setDataSource:self];
         [[self tableView] registerClass:[BBHomeTableViewCell class] forCellReuseIdentifier:NSStringFromClass([BBHomeTableViewCell class])];
     }
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [Elections removeAllObjects];
+    [self getRequest];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"Elections";
-    
     Elections = [[NSMutableArray alloc] init];
-    Choices = [[NSMutableArray alloc] init];
     
-    BBChoice *c = [[BBChoice alloc] init];
-    c.name = @"Choice1";
-    c.voteCount = 0;
-    [Choices addObject:c];
-    
-    c = [[BBChoice alloc] init];
-    c.name = @"Choice2";
-    c.voteCount = 0;
-    [Choices addObject:c];
-    
-    c = [[BBChoice alloc] init];
-    c.name = @"Choice3";
-    c.voteCount = 0;
-    [Choices addObject:c];
-    
-    BBElection *elec = [[BBElection alloc] init];
-    elec.name = @"Election1";
-    elec.choices = Choices;
-    [Elections addObject:elec];
-    
-    elec = [[BBElection alloc] init];
-    elec.name = @"Election2";
-    elec.choices = Choices;
-    [Elections addObject:elec];
-    
-    elec = [[BBElection alloc] init];
-    elec.name = @"Election3";
-    elec.choices = Choices;
-    [Elections addObject:elec];
+//    Choices = [[NSMutableArray alloc] init];
+//    
+//    BBChoice *c = [[BBChoice alloc] init];
+//    c.name = @"Choice1";
+//    c.voteCount = 0;
+//    [Choices addObject:c];
+//    
+//    c = [[BBChoice alloc] init];
+//    c.name = @"Choice2";
+//    c.voteCount = 0;
+//    [Choices addObject:c];
+//    
+//    c = [[BBChoice alloc] init];
+//    c.name = @"Choice3";
+//    c.voteCount = 0;
+//    [Choices addObject:c];
+//    
+//    BBElection *elec = [[BBElection alloc] init];
+//    elec.name = @"Election1";
+//    elec.choices = Choices;
+//    [Elections addObject:elec];
+//    
+//    elec = [[BBElection alloc] init];
+//    elec.name = @"Election2";
+//    elec.choices = Choices;
+//    [Elections addObject:elec];
+//    
+//    elec = [[BBElection alloc] init];
+//    elec.name = @"Election3";
+//    elec.choices = Choices;
+//    [Elections addObject:elec];
     
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -120,6 +130,29 @@
     // Return NO if you do not want the specified item to be editable.
     return NO;
 }
+
+-(void) getRequest
+{
+    [[BBManager sessionManager] GET:@"/api/v1/elections" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        //NSLog(@"JSON PRINTS %@", responseObject);
+        NSArray* arrayOfElections = responseObject[@"elections"];
+        for(int i = 0; i<[arrayOfElections count]; ++i )
+        {
+            NSDictionary* electionDictionary = arrayOfElections[i];
+            BBElection* e = [[BBElection alloc] init];
+            e.description = [electionDictionary objectForKey:@"body"];
+            e.electionID = electionDictionary[@"id"];
+            e.name = electionDictionary[@"title"];
+            e.creatorID = electionDictionary[@"creator_id"];
+            e.publicID = electionDictionary[@"public"];
+            [Elections addObject:e];
+        }
+        [self.tableView reloadData];
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"WOW IT FAILED");
+    
+    }
+     ];}
 
 
 /*

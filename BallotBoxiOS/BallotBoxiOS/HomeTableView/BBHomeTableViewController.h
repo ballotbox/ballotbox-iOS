@@ -12,4 +12,6 @@
 
 @interface BBHomeTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
+-(void) getRequest;
+
 @end

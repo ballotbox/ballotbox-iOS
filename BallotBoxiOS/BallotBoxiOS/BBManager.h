@@ -21,5 +21,7 @@
 - (BBManager*) init;
 - (NSString*) getApplicationID;
 - (NSString*) getSecret;
+- (NSString*) getAccessToken;
+- (void) setAccessToken : (NSString*) token;
 
 @end

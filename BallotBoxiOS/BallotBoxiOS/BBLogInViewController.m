@@ -17,6 +17,7 @@
     UITextField* username;
     UITextField* password;
     UIButton* LogIn;
+    NSString* accessToken;
 }
 
 @end
@@ -87,16 +88,18 @@
 
 - (void) sendRequest : (NSString*) action
 {
-    NSDictionary* POSTdictionary = @{@"cliend_id":[[BBManager manager] getApplicationID], @"client_secret":[[BBManager manager] getSecret], @"username":username.text, @"password":password.text, @"grantType":@"password"};
+    NSDictionary* POSTdictionary = @{@"client_id":[[BBManager manager] getApplicationID], @"client_secret":[[BBManager manager] getSecret], @"username":username.text, @"password":password.text, @"grant_type":@"password"};
     
-    [[BBManager sessionManager] POST:@"" parameters:POSTdictionary success:^(NSURLSessionDataTask *task, id responseObject) {
+    [[BBManager sessionManager] POST:@"/oauth/token" parameters:POSTdictionary success:^(NSURLSessionDataTask *task, id responseObject) {
         
-        NSLog(@"%@", [(NSDictionary*)responseObject description]);
-        //[(AppDelegate*)[[UIApplication sharedApplication] delegate] completeLogIn];
+        [[[BBManager sessionManager] requestSerializer] setValue:[NSString stringWithFormat:@"Bearer %@", responseObject[@"access_token"]] forHTTPHeaderField:@"Authorization"];
+        [[BBManager manager] setAccessToken:responseObject[@"access_token"]];
+        [(AppDelegate*)[[UIApplication sharedApplication] delegate] completeLogIn];
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"WOW IT FAILED: %@", [error description]);
     } ];
+    
     
 }
 

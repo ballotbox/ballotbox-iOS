@@ -12,8 +12,10 @@
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSMutableArray *choices;
-@property (nonatomic) NSInteger *electionID;
+@property (nonatomic) NSNumber *electionID;
 @property (nonatomic) NSString *description;
+@property (nonatomic) NSNumber *creatorID;
+@property (nonatomic) BOOL publicID;
 
 
 
